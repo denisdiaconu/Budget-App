@@ -1,19 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+<div class="shadow p-2 mb-3 bg-white rounded">
+  <p class="text-muted">Credit: <%=counter(@group_entities)%><p>
+</div>
 
-<p>
-  <strong>Icon:</strong>
-  <%= @group.icon %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
-
+<% @group_entities.each do |item| %>
+  <div class="d-flex bg-white rounded m-lr flex-row justify-content-around shadow p-2 mb-1">
+    <div>
+      <%=image_tag Group.find(params[:id]).icon, class: 'rounded-circle', size: "130" %>
+    </div>
+    <div class="">
+      <p class="text-muted">
+      Author: <%=item.user.username%> | 
+      <%= item.name %>
+      </p>
+      <p class="text-muted"><%= item.created_at %></p>
+      <%if current_user == item.user%>
+        <%= link_to 'Edit', edit_entity_path(item),class:'btn btn-sm btn-outline-primary'%>
+        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-sm btn-outline-danger' %>
+      <%end%>
+    </div>
+    <div>
+        <p class="text-dark">Amount: <%= item.amount %></p>
+    </div>
+  </div>
+<%end%>
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
