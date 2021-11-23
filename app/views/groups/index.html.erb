@@ -1,31 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="col-lg-5 col-sm-12 mt-2">
     <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.icon %></td>
-        <td><%= group.user_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+      <div class="d-flex flex-row justify-content-around bg-white rounded m-lr shadow p-2 mb-1">
+        <div>
+          <%=image_tag group.icon,class: 'rounded-circle', size: "160" %>
+        </div>
+        <div>
+          <p class="text-muted"><%= group.name %></p>
+          <p class="text-muted"><%= group.created_at %></p>
+           <%= link_to 'Group Entities', group_path(group),class:'btn btn-outline-info btn-sm'%>
+          <%if current_user == group.user%>
+            <%= link_to 'Edit', edit_group_path(group),class:'btn btn-outline-primary btn-sm'%>
+            <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-sm btn-outline-danger' %>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+      <%= link_to 'New Group', new_group_path, class:'buttonSpecial btn btn-success btn-lg btn-block w-100'%>
+    </div>
