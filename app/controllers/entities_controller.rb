@@ -49,7 +49,7 @@ class EntitiesController < ApplicationController
   def destroy
     @entity.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Entity was successfully destroyed.' }
+      format.html { redirect_to groups_path, notice: 'Entity was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
