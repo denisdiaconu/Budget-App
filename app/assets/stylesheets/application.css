@@ -13,25 +13,25 @@
  *= require_tree .
  *= require_self
  */
- body {
-    background-color: #f7f7f9;
-  }
-  
-  .bg-color {
-    background-color: #3778c2;
-  }
-  
-  .btn-color {
-    background-color: #5fb523;
-  }
-  
-  .m-lr {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+body {
+  background-color: #f7f7f9;
+}
+
+.bg-color {
+  background-color: #3778c2;
+}
+
+.btn-color {
+  background-color: #5fb523;
+}
+
+.m-lr {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .buttonSpecial {
-    position: fixed;
-    bottom: 0;
-    border-radius: 0;
+  position: fixed;
+  bottom: 0;
+  border-radius: 0;
 }
