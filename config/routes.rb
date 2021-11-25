@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'groups#index'
+  unauthenticated :user do
+    root to: 'splash#index'
+  end
+  
+  authenticated :user do
+    root 'groups#index', as: :authenticated_root
+  end
+  
   resources :entities
   resources :groups
   devise_for :users
