@@ -6,7 +6,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <%if user_signed_in?%>
-        <%= link_to 'All transaction', entities_path,class:'nav-link text-light' %>
         <%= link_to 'All groups', groups_path,class:'nav-link text-light' %>
       <%end%>
       </ul>

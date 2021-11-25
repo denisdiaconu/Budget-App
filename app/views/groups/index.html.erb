@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="col-lg-5 col-sm-12 mt-2">
     <% @groups.each do |group| %>
@@ -11,7 +10,6 @@
           <p class="text-muted"><%= group.created_at %></p>
            <%= link_to 'Group Entities', group_path(group),class:'btn btn-outline-info btn-sm'%>
           <%if current_user == group.user%>
-            <%= link_to 'Edit', edit_group_path(group),class:'btn btn-outline-primary btn-sm'%>
             <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-sm btn-outline-danger' %>
           <%end%>
         </div>

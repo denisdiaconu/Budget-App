@@ -23,7 +23,7 @@ class EntitiesController < ApplicationController
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to @entity, notice: 'Entity was successfully created.' }
+        format.html { redirect_to groups_path, notice: 'Entity was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class EntitiesController < ApplicationController
   def destroy
     @entity.destroy
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Entity was successfully destroyed.' }
+      format.html { redirect_to groups_path, notice: 'Entity was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
