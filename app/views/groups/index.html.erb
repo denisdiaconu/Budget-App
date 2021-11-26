@@ -1,0 +1,19 @@
+
+<div class="col-lg-5 col-sm-12 mt-2">
+    <% @groups.each do |group| %>
+      <div class="d-flex flex-row justify-content-around bg-white rounded m-lr shadow p-2 mb-1">
+        <div>
+          <%=image_tag group.icon,class: 'rounded-circle', size: "160" %>
+        </div>
+        <div>
+          <p class="text-muted"><%= group.name %></p>
+          <p class="text-muted"><%= group.created_at %></p>
+           <%= link_to 'Group Entities', group_path(group),class:'btn btn-outline-info btn-sm'%>
+          <%if current_user == group.user%>
+            <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-sm btn-outline-danger' %>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+      <%= link_to 'New Group', new_group_path, class:'buttonSpecial btn btn-success btn-lg btn-block w-100'%>
+    </div>
