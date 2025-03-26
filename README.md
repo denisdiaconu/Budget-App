@@ -17,17 +17,6 @@
 - Heroku
 
 
-
-
-## 🔴 Live <a name = "here"></a>
-**Click [here](https://bugetdes.herokuapp.com/) in order to see the page of this project.**
-
-
-## 🔴 Video <a name = "here"></a>
-**Click [here](https://www.loom.com/share/e3fed08faf16451da5ca7f33f45792a4) in order to see the video of this project.**
-
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps on the command line.
